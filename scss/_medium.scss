@@ -1,0 +1,37 @@
+
+
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+
+    nav ul {text-align: right;}
+    nav ul li {width: auto;}
+    nav ul li:first-child a {border-left: 1px solid #777;}
+    nav ul li:last-child a {border-right: 1px solid #777;}
+    nav ul li a{padding: .5rem 1rem;}
+
+
+/*----------- MAIN --------------*/
+
+.column {padding: 0 $gutter;}
+ @for $i from 0 to 6 {
+    $w:( $i / 12) * 100%;
+    .medium-#{$i} {flex-basis: $w;}
+}
+
+.readMore {
+    text-align: center;
+
+}
+
+
+
+/*----------- FOOTER --------------*/
+    
