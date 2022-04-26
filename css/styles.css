@@ -522,8 +522,7 @@ footer {
     flex-direction: row; }
     header h3 {
       display: block;
-      justify-content: right;
-      background-color: red; }
+      justify-content: right; }
 
   div#hamburger {
     display: none; }
