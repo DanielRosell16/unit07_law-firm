@@ -331,7 +331,6 @@ div#headerWrapper {
 header {
   grid-template-areas: header;
   padding: 0.5rem 2%;
-  display: flex;
   width: 100%; }
 
 div img {
@@ -522,7 +521,7 @@ footer {
     flex-direction: row; }
     header h3 {
       display: block;
-      justify-content: right; }
+      text-align: right; }
 
   div#hamburger {
     display: none; }
