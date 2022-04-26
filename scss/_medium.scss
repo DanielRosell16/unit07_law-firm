@@ -1,37 +1,83 @@
-
-
-
 /*----------- BODY --------------*/
 
-
+div#pageWrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "navigation"
+    "content"
+    "footer";
+}
 
 /*----------- HEADER --------------*/
-header h3 {display: flex;}
+header {
+    flex-direction: row;
 
+    h3 {
+        display: block;
+        justify-content: right;
+        background-color: red;
+    }
+
+}
+    
+div#hamburger {
+  display: none;
+}
+
+div#headerWrapper {
+  display: grid;
+  width: 100%;
+}
 
 /*----------- NAVIGATION --------------*/
 
-    nav ul {text-align: right;}
-    nav ul li {width: auto;}
-    nav ul li:first-child a {border-left: 1px solid #777;}
-    nav ul li:last-child a {border-right: 1px solid #777;}
-    nav ul li a{padding: .5rem 1rem;}
+div#navWrapper {
+  display: grid;
 
+  nav {
+      height: auto;
+      width: 100%;
+  }
+}
+
+nav ul {
+    flex-direction: row;
+    justify-content: right;
+    div#closex {
+        display: none;
+    }
+}
+nav ul li {
+  width: auto;
+}
+nav ul li:first-child a {
+  border-left: 1px solid #777;
+}
+nav ul li:last-child a {
+  border-right: 1px solid #777;
+}
+nav ul li a {
+  padding: 0.5rem 1rem;
+}
 
 /*----------- MAIN --------------*/
 
-.column {padding: 0 $gutter;}
- @for $i from 0 to 6 {
-    $w:( $i / 12) * 100%;
-    .medium-#{$i} {flex-basis: $w;}
+
+.column {
+  padding: 0 $gutter;
+}
+@for $i from 0 to 6 {
+  $w: ($i / 12) * 100%;
+  .medium-#{$i} {
+    flex-basis: $w;
+  }
 }
 
 .readMore {
-    text-align: center;
-
+  text-align: center;
 }
 
-
-
 /*----------- FOOTER --------------*/
-    
+
+

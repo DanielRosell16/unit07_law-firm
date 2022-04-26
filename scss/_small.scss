@@ -1,169 +1,217 @@
 /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
-html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
 
 /*----------- apply a natural box layout model to all elements --------------*/
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 /*----------- BODY --------------*/
 body {
-    font-size: 16px;
-    font-family: Verdana, sans-serif;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
 }
-
+div#pageWrapper {
+  display: grid;
+  grid-template-areas:
+    "hamburger"
+    "header"
+    "content"
+    "navigation"
+    "footer";
+}
 
 /*----------- HEADER --------------*/
-div#headerWrapper {grid-row-start: 1; display: grid;}
+div#headerWrapper {
+  display: flex;
+  width: 100%;
+}
 
 header {
-    padding: .5rem 2%;
-    display: flex;
+  grid-template-areas: header;
+  padding: 0.5rem 2%;
+  display: flex;
+  width: 100%;
 }
 
-div img {float: left;}
-header h1 {margin: 0;}
-header h2 {margin: 0; font-weight: normal;}
-header h3 {display: none;}
+div img {
+  float: left;
+}
+header h1 {
+  margin: 0;
+}
+header h2 {
+  margin: 0;
+  font-weight: normal;
+}
+header h3 {
+  display: none;
+}
+
 /*----------- NAVIGATION --------------*/
 
-div#navWrapper {grid-row-start: 4; display: grid;}
+div#navWrapper {
+grid-area: navigation;
+}
 
 nav {
-    background-color: #666;
+  background-color: $menuColor;
+  height: 100vh;
+  width: 100%;
+ 
 }
-
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 nav ul li {
-    float: right;
-    width: 25%;
+  float: right;
+  width: 25%;
+  height: 100%;
+  width: 100%;
 }
 nav ul li a {
-    display: block;
-    background-color: #444;
-    color: #eee;
-    border-left: 1px solid #777;
-    padding: .5rem 0;
-    text-decoration: none;
-    font-size: .9rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: darken($menuColor, 10%);
+  color: black;
+  border-left: 1px solid #777;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
 }
-nav ul li:first-child a {border-left: none;}
+nav ul li:first-child a {
+  border-left: none;
+}
 
 nav ul li a:hover {
-    background-color: #eee;
-    color: #333;
+  background-color: #eee;
+  color: #333;
 }
 nav ul li.active a {
-    background-color: #000;
-    color: #fff;
+  background-color: darken($menuColor, 30%);
+  color: #fff;
 }
 /*----------- MAIN --------------*/
 
 div#mainWrapper {
-    grid-row-start: 2;
+    grid-area: content;
 }
 
 main {
-    padding: 0 5%;
-    min-height: 10rem;
+  padding: 0 5%;
+  min-height: 10rem;
 }
 
 #mainWrapper {
-    padding: 5px;
+  padding: 5px;
 }
 
 main body {
-    display: grid;
+  display: grid;
 }
 
-div.flexed {display: flex; flex-wrap: wrap; margin-top: 30px; margin-bottom: 30px;}
+div.flexed {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 .column {
-    padding-right: 0 $gutter;
-    background-color: $attorniesCard;
+  padding-right: 0 $gutter;
+  background-color: $attorniesCard;
 }
 
-
- @for $i from 0 to 12 {
-    $w:( $i / 12) * 100%;
-    .small-#{$i} {flex-basis: $w;}
+@for $i from 0 to 12 {
+  $w: ($i / 12) * 100%;
+  .small-#{$i} {
+    flex-basis: $w;
+  }
 }
 
-div.flexedSection2 {display: flex; flex-wrap: wrap; margin-top: 30px; margin-bottom: 30px;}
+div.flexedSection2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 .column2 {
-    padding-right: 0 $gutter;
-    background-color: $cardBackground;
+  padding-right: 0 $gutter;
+  background-color: $cardBackground;
 }
 
 .column3 {
-    padding-right: 0 $gutter;
-    background-color: $blogCard;
+  padding-right: 0 $gutter;
+  background-color: $blogCard;
 }
 
 .column4 {
-    padding-right: 0 $gutter;
-    background-color: $tipOfTheDay;
+  padding-right: 0 $gutter;
+  background-color: $tipOfTheDay;
 }
 
-
-
 main div img {
-    width: 100%;
+  width: 100%;
 }
 
 .jumpotron {
-    background-color: #333;
-    color: white;
-    p {font-size: 200%; padding: 2rem 0;}
+  background-color: #333;
+  color: white;
+  p {
+    font-size: 200%;
+    padding: 2rem 0;
+  }
 }
 
 .lanceCard {
-    border: black solid 1px;
-    h2 {text-align: center;}
+  border: black solid 1px;
+  h2 {
+    text-align: center;
+  }
 }
 
 .div {
-
-   text-align: center;
-   font-size: 25px;
-   border: #000 solid 5px;
-   border-radius: 25px;
-   margin-top: 25px;
+  text-align: center;
+  font-size: 25px;
+  border: #000 solid 5px;
+  border-radius: 25px;
+  margin-top: 25px;
 }
 
 div h4.readMore3 {
-    background-color: white;
-    padding: 1px;
+  background-color: white;
+  padding: 1px;
 }
-
 
 div.column4 {
-    display: none;
+  display: none;
 }
 
-div#footerWrapper {
-    grid-row-start: 3;
+#hamburger {
+    grid-area: hamburger;
 }
-
 
 /*----------- FOOTER --------------*/
-footer {
-    background-color: #ddd;
-    padding: .5rem 2%;
-    text-align: center;
+
+div#footerWrapper {
+    grid-area: footer;
 }
 
-
-
-/*----- Clearfix: Force an Element not to collapse -----*/
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+footer {
+  background-color: $menuColor;
+  padding: 0.5rem 2%;
+  text-align: center;
+  width: 100%;
 }
