@@ -13,6 +13,8 @@ body {
 
 
 /*----------- HEADER --------------*/
+div#headerWrapper {grid-row-start: 1; display: grid;}
+
 header {
     padding: .5rem 2%;
     display: flex;
@@ -21,8 +23,11 @@ header {
 div img {float: left;}
 header h1 {margin: 0;}
 header h2 {margin: 0; font-weight: normal;}
-header h3 {flex-direction: end;}
+header h3 {display: none;}
 /*----------- NAVIGATION --------------*/
+
+div#navWrapper {grid-row-start: 4; display: grid;}
+
 nav {
     background-color: #666;
 }
@@ -58,9 +63,22 @@ nav ul li.active a {
     color: #fff;
 }
 /*----------- MAIN --------------*/
+
+div#mainWrapper {
+    grid-row-start: 2;
+}
+
 main {
     padding: 0 5%;
     min-height: 10rem;
+}
+
+#mainWrapper {
+    padding: 5px;
+}
+
+main body {
+    display: grid;
 }
 
 div.flexed {display: flex; flex-wrap: wrap; margin-top: 30px; margin-bottom: 30px;}
@@ -95,7 +113,7 @@ div.flexedSection2 {display: flex; flex-wrap: wrap; margin-top: 30px; margin-bot
 
 
 
-div img {
+main div img {
     width: 100%;
 }
 
@@ -127,6 +145,10 @@ div h4.readMore3 {
 
 div.column4 {
     display: none;
+}
+
+div#footerWrapper {
+    grid-row-start: 3;
 }
 
 
