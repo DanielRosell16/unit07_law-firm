@@ -220,3 +220,11 @@ div.social i {
   margin: 1rem;
   align-items: center;
 }
+
+div.social a {
+  color: black;
+}
+
+div.social a:hover {
+  color: $attorniesCard;
+}

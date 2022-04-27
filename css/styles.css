@@ -515,6 +515,12 @@ div.social i {
   margin: 1rem;
   align-items: center; }
 
+div.social a {
+  color: black; }
+
+div.social a:hover {
+  color: #e7b75d; }
+
 @media only screen and (min-width: 35rem) {
   /*----------- BODY --------------*/
   div#pageWrapper {
