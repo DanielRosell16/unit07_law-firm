@@ -591,6 +591,9 @@ div.social a:hover {
   .readMore {
     text-align: center; }
 
+  div.flexedSection2 div {
+    justify-content: space-between; }
+
   /*----------- FOOTER --------------*/ }
 /* end of media query */
 @media only screen and (min-width: 64rem) {
